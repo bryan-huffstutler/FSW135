@@ -22,6 +22,9 @@ const issueSchema = new Schema({
   dislikes: {
     type: Number,
     default: 0
+  },
+  comments: {
+    type: String
   }
 })
 
