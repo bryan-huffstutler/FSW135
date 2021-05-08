@@ -18,13 +18,13 @@ mongoose.connect(
     useFindAndModify: false
   },
   () => console.log('Connected to the DB')
-)
+);
 
 //Routes
-app.use("/api", expressJwt({ secret: process.env.SECRET, algorithms: ['RS256']}))
-app.use("/api/", require("./routes/issueRouter.js"))
-app.use("/api/auth", require("./routes/authRouter"))
-
+app.use("/api", expressJwt({ secret: process.env.SECRET, algorithms: ['HS256']}))
+app.use("/api/rockthevote", require("./routes/issueRouter.js"))
+app.use("/api/comments", require("./routes/commentRouter.js"))
+app.use("/auth", require("./routes/authRouter.js"))
 
 //Error Handler
 app.use((err, req, res, next) => {
