@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 export const UserContext = React.createContext()
 
-const userAxios = axios.create()
+export const userAxios = axios.create()
 userAxios.interceptors.request.use(config => {
     const token = localStorage.getItem("token")
     config.headers.Authorization = `Bearer ${token}`
@@ -87,7 +87,9 @@ export default function UserProvider(props) {
     }
 
     function getCommentsForUser() {
-        userAxios.get(`/api/comments/user/${userState.user._id}`) //grabs users id from user in localstorage
+        
+        userAxios.get(`/api/comments/user/${userState.user._id}`) //grabs users id from user in context
+        
         .then(res => {
             //Changes H3 to text if 304(Unchanged Status)
             if(res.status = 304){
@@ -102,15 +104,26 @@ export default function UserProvider(props) {
         })
     }
 
-    // function getCommentsForIssue() {
-    //  userState.issues.find()
-    //     userAxios.get(`/api/comments/issues/`)
-    // }
-    //Trying to figure out how to get this function to pass in the issueId for the router...
-    //may have to move this function out into IssueList, unknown for now
+    function getCommentsForIssue(e) {
+        const btnPar = e.target.parentNode
+        const id = btnPar.id
+        userAxios.get(`/comments/issue/${id}`)
+        .then(res => {
+          setUserState(prevState => ({
+            ...prevState,
+            issueComments: [...prevState.issueComments, res.data]
+          }))
+        })
+    }
+
+    function postComment(newComment) {  
+        userAxios.post(`/api/comments`, newComment)
+        .then (res => console.log(`Added to DB`))
+        .catch(err => console.log(err.response.data.errMsg))
+    }
 
     return (
-        <UserContext.Provider value={ { ...userState, signup, login, logout, addIssue, getCommentsForUser} }>
+        <UserContext.Provider value={ { ...userState, signup, login, logout, addIssue, getCommentsForUser, getCommentsForIssue, postComment, getIssues} }>
             { props.children }
         </UserContext.Provider>
     )

@@ -48,6 +48,7 @@ commentRouter.get('/', (req, res, next) => {
 })
 
 //Post
+
 commentRouter.post('/', (req, res, next)=> {
   req.body.user = req.user._id
   const newComment = new Comment(req.body)
