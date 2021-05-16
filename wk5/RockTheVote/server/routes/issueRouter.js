@@ -5,12 +5,22 @@ const Issue = require('../models/issue')
 //Get All
 
 issueRouter.get('/', (req, res, next) => {
-  Issue.find((err, rockthevote) => {
+  Issue.find((err, issues                               ) => {
     if(err){
       res.status(500)
       return next(err)
     }
-    return res.status(200).send(rockthevote)
+    return res.status(200).send(issues)
+  })
+})
+
+issueRouter.get('/user/:userId', (req, res, next) => {
+  Issue.find({user: req.params.userId},(err, issues) => {
+    if(err){
+      res.status(500)
+      return next(err)
+    }
+    return res.status(200).send(issues)
   })
 })
 
