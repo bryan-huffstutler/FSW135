@@ -7,6 +7,7 @@ export default function Navbar(){
   return (
     <div className = "navbar">
       <Link to='/profile'>Profile</Link>
+      <Link to='/public'>Issues</Link>
       <button onClick = {logout}>Logout</button>
     </div>
   )

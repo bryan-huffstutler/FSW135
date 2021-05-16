@@ -3,8 +3,9 @@ import './App.css';
 import Auth from './components/Auth'
 import {UserContext} from './context/UserProvider'
 import {Switch, Route, Redirect} from 'react-router-dom'
-import Profile from './components/Profile'
+import Public from './components/Public'
 import Navbar from './components/Navbar'
+import Profile from './components/Profile'
 
 function App() {
   const {token} = useContext(UserContext)
@@ -14,11 +15,15 @@ function App() {
       <Switch>
         <Route 
           exact path = '/'
-          render={()=> token ? <Redirect to='/profile' /> : <Auth/>}
+          render={()=> token ? <Redirect to='/public' /> : <Auth/>}
+        />
+        <Route
+          path='/public'
+          render={()=> token ? <Public /> : <Auth/>}
         />
         <Route
           path='/profile'
-          render={()=> token ? <Profile /> : <Auth/>}
+          render={()=> token ? <Profile /> : <Auth />}
         />
       </Switch>
       
