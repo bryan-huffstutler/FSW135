@@ -114,10 +114,11 @@ export default function UserProvider(props) {
             issueComments: [...prevState.issueComments, res.data]
           }))
         })
-    }
+    } 
 
-    function postComment(newComment) {  
-        userAxios.post(`/api/comments`, newComment)
+    function postComment(newComment) {
+        
+        userAxios.post(`/api/comments`, newComment )
         .then (res => console.log(`Added to DB`))
         .catch(err => console.log(err.response.data.errMsg))
     }

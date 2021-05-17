@@ -7,6 +7,7 @@ import UserComments from './UserComments'
 export default function Profile () {
   const [togCom, setTogCom] = useState(false)
   const {user, addIssue, issues, getCommentsForUser, issueComments, userComments, getIssues} = useContext(UserContext)
+  
   return (
     <div>
       <h1>Welcome {user.username}</h1>
