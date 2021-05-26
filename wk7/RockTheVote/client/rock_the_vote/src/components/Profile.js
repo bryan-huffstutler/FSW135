@@ -33,7 +33,7 @@ export default function Profile () {
   }
   
   return (
-    <div>
+    <div id='profile'>
       <h1>@<span style={{color: "red"}}>{user.username}</span>'s Profile</h1>
 
       <p>This is your personalized profile page, here you can view all of your posted comments or posted issues in one place!</p><hr/>

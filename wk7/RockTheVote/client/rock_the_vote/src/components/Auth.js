@@ -45,7 +45,7 @@ export default function Auth(){
             btnText="Login"
             errMsg={errMsg}
           />
-          <p onClick={() => toggleForm()}>Not a member?</p>
+          <button onClick={() => toggleForm()}>Not a member?</button>
         </>
       :
         <>
@@ -56,7 +56,7 @@ export default function Auth(){
             btnText="Sign Up"
             errMsg={errMsg}
           />
-          <p onClick={() => toggleForm()}>Already a member?</p>
+          <button onClick={() => toggleForm()}>Already a member?</button>
         </>
       }
     </div>

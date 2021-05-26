@@ -8,7 +8,7 @@ export default function IssueList (props) {
   }, [])
   
   return (
-    <div>
+    <div id='issues'>
       {issues.map(issue => <Issue username={username} {...issue}  key={issue._id}/> )}
     </div>
   )

@@ -9,7 +9,7 @@ export default function Profile () {
   const {user, addIssue, issues, getCommentsForUser, issueComments,  getIssues} = useContext(UserContext)
   
   return (
-    <div>
+    <div id='public'>
       <h1>Welcome @{user.username}</h1>
       <h3>Post an issue</h3>
       <IssueForm addIssue={ addIssue }/>
