@@ -35,11 +35,11 @@ export default function Issue (props) {
 
       <h1>{topic}</h1>
 
-      <img src={imgUrl} width="300" height="300"/>
+      <img src={imgUrl} width="350" height="300"/><br/>
 
-      <span>{username}</span>
-      <span>Post Date: {postDate}</span>
-      <span>Likes: {likes} Dislikes: {dislikes}</span>
+      <span><strong>Posted By: </strong>{username}</span>
+      <span> <strong>Post Date: </strong>{Date(postDate)}</span>
+      <span> <strong>Likes:</strong> {likes} <strong>Dislikes:</strong> {dislikes}</span><br/>
 
       {displayComments && issueComments ?
       issueComments.map(comment => <Comment {...comment} key={comment._id} getUserName = {getUserName}/>) : 

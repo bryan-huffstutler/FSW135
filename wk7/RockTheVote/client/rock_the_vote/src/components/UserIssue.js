@@ -13,9 +13,9 @@ export default function UserIssue ( props ){
   return (
     <div key={_id} id={_id}>
       <h2>{topic}</h2>
-      <img src={imgUrl} width="300" height="300"/>
-      <span>{username}</span>
-      <span> Posted: {postDate}</span>
+      <img src={imgUrl} width="300" height="300"/><br/>
+      <span>Posted By: {username}</span>
+      <span> Posted: {Date(postDate)}</span>
       <span> Likes: {likes}</span>
       <span> Dislikes: {dislikes}</span>
       <button onClick = {() => delIssue()}>Delete</button>
