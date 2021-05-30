@@ -11,7 +11,7 @@ export default function UserIssue ( props ){
   }
 
   return (
-    <div key={_id} id={_id}>
+    <div key={_id} id={_id} className = "issue">
       <h2>{topic}</h2>
       <img src={imgUrl} width="300" height="300"/><br/>
       <span>Posted By: {username}</span>

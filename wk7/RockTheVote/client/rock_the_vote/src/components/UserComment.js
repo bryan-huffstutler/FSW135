@@ -10,7 +10,7 @@ export default function UserComment (props) {
   }
   
   return (
-    <div key={_id} id={_id}>
+    <div key={_id} id={_id} className = 'comment'>
       <h2>{comment}</h2>
       <span>{username}</span>
       <span> Posted: {postDate}</span>
