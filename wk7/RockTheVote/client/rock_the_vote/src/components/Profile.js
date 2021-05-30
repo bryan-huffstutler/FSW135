@@ -37,15 +37,12 @@ export default function Profile () {
       <h1>@<span style={{color: "red"}}>{user.username}</span>'s Profile</h1>
 
       <p>This is your personalized profile page, here you can view all of your posted comments or posted issues in one place!</p><hr/>
-
-      {commentToggle && userComments ?
-      <UserComments /> : <button onClick={getComments}>View Your Comments</button>}
-
-      {commentToggle ? <button onClick={togCommentTog}>HIDE COMMENTS</button> : ""}
       
-      {issueToggle && userIssues ? <UserIssues /> : <button onClick={getIssues}>View Your Posted Issues</button>}
+      {issueToggle ? <button onClick={togIssueTog}>HIDE ISSUES</button> : <button onClick={getIssues}>View Your Posted Issues</button>}
+      {commentToggle ? <button onClick={togCommentTog}>HIDE COMMENTS</button> : <button onClick={getComments}>View Your Comments</button>}
 
-      {issueToggle ? <button onClick={togIssueTog}>HIDE ISSUES</button> : ""}
+      {commentToggle  ? <UserComments /> : ""}
+      {issueToggle && userIssues ? <UserIssues /> : ""}     
     </div>
   )
 }
