@@ -1,5 +1,9 @@
 body {
-  background-color: cornflowerblue
+  background-color: cornflowerblue;
+  background-image: url('https://images.unsplash.com/photo-1592801559101-dce000eca631?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTgwOTN8MHwxfHNlYXJjaHw1OHx8dXMlMjBmbGFnfGVufDB8fHx8MTYyMjQwMTA4MQ&ixlib=rb-1.2.1&q=80&w=1080');
+  background-repeat: none;
+  background-position: center;
+  background-size: cover;
 }
 
 .navbar {
@@ -11,7 +15,8 @@ body {
 
 a {
   text-decoration: none;
-  color: white;
+  color: rgb(243, 44, 54);
+  font-weight: 900;
 }
 
 #profile {
@@ -34,7 +39,10 @@ img {
 }
 
 .comment {
-  text-shadow: 2px 2px 2px white;
+  background-color: rgba(255, 0, 0, 0.411);
+  margin: 22px;
+  border-radius: 89px;
+  padding: 10px;
 }
 
 .auth-container {
@@ -45,4 +53,12 @@ img {
 input {
   font-size: 17px;
   box-shadow: 2px 2px 2px black;
+}
+
+.issue {
+  background-color: rgba(0, 2, 110, 0.336);
+  border-radius: 200px;
+  padding: 8px;
+  margin: 10px;
+  color: white;
 }
