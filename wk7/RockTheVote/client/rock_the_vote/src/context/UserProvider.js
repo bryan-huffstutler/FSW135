@@ -123,7 +123,9 @@ export default function UserProvider(props) {
                 setUserState(prevState => ({
                     ...prevState,
                     issueComments: res.data
+                    
                 }))
+                console.log(userState.issueComments)
             })
             .catch(err => console.log(err.response.data.errMsg))
     }

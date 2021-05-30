@@ -12,7 +12,7 @@ import ProtectedRoute from './components/ProtectedRoute'
 function App() {
   const { token } = useContext(UserContext)
   return (
-    <div>
+    <div id='app'>
       <Navbar />
       <Switch>
         <Route

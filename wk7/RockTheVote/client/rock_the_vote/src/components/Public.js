@@ -4,9 +4,9 @@ import IssueForm from './IssueForm'
 import IssueList from './IssueList'
 import UserComments from './UserComments'
 
-export default function Profile () {
+export default function Public () {
   const [togCom, setTogCom] = useState(false)
-  const {user, addIssue, issues, getCommentsForUser, issueComments,  getIssues} = useContext(UserContext)
+  const {user, addIssue, issues, issueComments,  getIssues} = useContext(UserContext)
   
   return (
     <div id='public'>

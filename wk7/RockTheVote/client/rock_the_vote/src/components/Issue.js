@@ -31,7 +31,7 @@ export default function Issue (props) {
   }
 
   return (
-    <div id={_id} key={_id}>
+    <div id={_id} key={_id} className = 'issue'>
 
       <h1>{topic}</h1>
 
@@ -41,7 +41,7 @@ export default function Issue (props) {
       <span> <strong>Post Date: </strong>{Date(postDate)}</span>
       <span> <strong>Likes:</strong> {likes} <strong>Dislikes:</strong> {dislikes}</span><br/>
 
-      {displayComments && issueComments ?
+      {displayComments ?
       issueComments.map(comment => <Comment {...comment} key={comment._id} getUserName = {getUserName}/>) : 
       <button onClick={toggleDispComments}>View Comments</button>}
 

@@ -3,7 +3,7 @@ import { UserContext } from '../context/UserProvider'
 
 export default function Comment(props) {
   const { addCommentLike, addCommentDislike, getCommentsForIssue } = useContext(UserContext)
-  const { _id, user, username, issueId } = props
+  const { _id, username, issueId } = props
   
   function addLike (event) {
     addCommentLike(event, issueId)
